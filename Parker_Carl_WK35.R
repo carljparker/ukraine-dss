@@ -71,7 +71,7 @@ par(
 
 x <- barplot( 
         c( russo.trade, eco.trade ),  names = c( "Russia", "Ukraine"), 
-        main = "Compare value of trade relationship",
+        main = "Compare the value of US trade relationships",
         ylim = c( 0, 30 ), xlab="", ylab="", 
         col = c( "red", "yellow" ) 
 ) 
@@ -105,9 +105,76 @@ par(
 
 x <- barplot( 
         c( russo.trade, eco.trade ),  names = c( "Russia", "Ukraine"), 
-        main = "Compare value of trade relationship",
+        main = "Compare the value of US trade relationships",
         ylim = c( 0, 30 ), xlab="", ylab="", 
         col = c( "red", "yellow" ) 
+) 
+
+title( xlab="Trade Relationship", cex.lab = 1.5, line = 2 )
+title( ylab="Value in billions", cex.lab = 1.5, line = 2 )
+
+dev.off()
+
+
+#
+##############################################################
+#
+
+tai.trade <- 90.6
+
+png( "viz/taiwan-ukraine.png", 
+      width = 1000, height = 750, 
+      units = "px", pointsize = 16, 
+      bg = rgb( 248, 245, 236, maxColorValue = 255 ) 
+)
+
+par( 
+    cex.main = 1.75, cex.axis = 1.10, cex.lab = 1.25,
+    # margins: bottom, left, top and right
+    par( mar = c( 6, 7, 4, 4 ) + 0.1 )  
+)
+
+x <- barplot( 
+        c( tai.trade, russo.trade, eco.trade ),  
+        names = c( "Taiwan", "Russia", "Ukraine"), 
+        main = "Compare the value of US trade relationships",
+        ylim = c( 0, 100 ), xlab="", ylab="", 
+        col = c( "blue", "red", "yellow" ) 
+) 
+
+title( xlab="Trade Relationship", cex.lab = 2, line = 3 )
+title( ylab="Value in billions", cex.lab = 2, line = 3 )
+
+dev.off()
+
+
+#
+##############################################################
+#
+
+
+#
+# We need to reconfigure values for png and par. Otherwise, the
+# previously configured values (from above) continue to prevail.
+#
+png( "viz/taiwan-ukraine-tumblr.png", 
+      width = 500, height = 375, 
+      units = "px", pointsize = 9, 
+      bg = rgb( 248, 245, 236, maxColorValue = 255 ) 
+)
+
+par( 
+    cex.main = 1.5, cex.axis = 1, cex.lab = 1,
+    # margins: bottom, left, top and right
+    par( mar = c( 4, 4, 4, 4 ) + 0.1 )  
+)
+
+x <- barplot( 
+        c( tai.trade, russo.trade, eco.trade ),  
+        names = c( "Taiwan", "Russia", "Ukraine"), 
+        main = "Compare the value of US trade relationships",
+        ylim = c( 0, 100 ), xlab="", ylab="", 
+        col = c( "blue", "red", "yellow" ) 
 ) 
 
 title( xlab="Trade Relationship", cex.lab = 1.5, line = 2 )
