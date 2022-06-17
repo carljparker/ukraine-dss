@@ -143,6 +143,17 @@ x <- barplot(
         col = c( "blue", "red", "yellow" )
 )
 
+mysubtitle <- "2019 Data from http://ustr.gov/countries-regions"
+mtext(side = 3, line = 0.25, at = 1, adj = 0, mysubtitle )
+
+trade.volume <- c( eu.mean.trade, russo.trade, eco.trade )
+trade.volume.deco <- paste( "$", trade.volume, "B", sep = '' )
+y.loc <- trade.volume + 1.5
+#
+# The `text()` wants vectors for its first three parameters.
+#
+text( x, y.loc, trade.volume.deco )
+
 title( xlab="Trade Relationship", cex.lab = 2, line = 3 )
 title( ylab="Value in billions", cex.lab = 2, line = 3 )
 
@@ -178,12 +189,14 @@ x <- barplot(
         col = c( "blue", "red", "yellow" )
 )
 
+mysubtitle <- "2019 Data from http://ustr.gov/countries-regions"
+mtext(side = 3, line = 0.25, at = 1, adj = 0, mysubtitle )
+
 trade.volume <- c( eu.mean.trade, russo.trade, eco.trade )
 trade.volume.deco <- paste( "$", trade.volume, "B", sep = '' )
-y.loc <- trade.volume + 2
+y.loc <- trade.volume + 1.5
 #
-# The `text()` . . . procedure(?) . . . wants vectors for its first
-# three parameters.
+# The `text()` wants vectors for its first three parameters.
 #
 text( x, y.loc, trade.volume.deco )
 
