@@ -179,7 +179,7 @@ x <- barplot(
 )  
 
 trade.volume <- c( eu.mean.trade, russo.trade, eco.trade )
-trade.volume.deco <- paste( "$", trade.volume, "B" )
+trade.volume.deco <- paste( "$", trade.volume, "B", sep = '' )
 y.loc <- trade.volume + 2
 #
 # The `text()` . . . procedure(?) . . . wants vectors for its first
