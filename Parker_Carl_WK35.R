@@ -187,7 +187,7 @@ y.loc <- trade.volume + 2
 #
 text( x, y.loc, trade.volume.deco )
 
-title( xlab="Trade Relationship", cex.lab = 1.5, line = 2 )
+title( xlab="Trade Relationship", cex.lab = 1.5, line = 2.5 )
 title( ylab="Value in billions", cex.lab = 1.5, line = 2 )
 
 dev.off()
