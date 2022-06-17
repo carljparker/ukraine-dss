@@ -120,9 +120,10 @@ dev.off()
 ##############################################################
 #
 
-tai.trade <- 90.6
+tai.trade       <- 90.6
+eu.mean.trade   <- round( 40.7404 )
 
-png( "viz/taiwan-ukraine.png", 
+png( "viz/eu-ukraine.png", 
       width = 1000, height = 750, 
       units = "px", pointsize = 16, 
       bg = rgb( 248, 245, 236, maxColorValue = 255 ) 
@@ -135,10 +136,10 @@ par(
 )
 
 x <- barplot( 
-        c( tai.trade, russo.trade, eco.trade ),  
-        names = c( "Taiwan", "Russia", "Ukraine"), 
+        c( eu.mean.trade, russo.trade, eco.trade ),  
+        names = c( "EU (mean)", "Russia", "Ukraine"), 
         main = "Compare the value of US trade relationships",
-        ylim = c( 0, 100 ), xlab="", ylab="", 
+        ylim = c( 0, 50 ), xlab="", ylab="", 
         col = c( "blue", "red", "yellow" ) 
 ) 
 
@@ -157,7 +158,7 @@ dev.off()
 # We need to reconfigure values for png and par. Otherwise, the
 # previously configured values (from above) continue to prevail.
 #
-png( "viz/taiwan-ukraine-tumblr.png", 
+png( "viz/eu-ukraine-tumblr.png", 
       width = 500, height = 375, 
       units = "px", pointsize = 9, 
       bg = rgb( 248, 245, 236, maxColorValue = 255 ) 
@@ -170,12 +171,21 @@ par(
 )
 
 x <- barplot( 
-        c( tai.trade, russo.trade, eco.trade ),  
-        names = c( "Taiwan", "Russia", "Ukraine"), 
+        c( eu.mean.trade, russo.trade, eco.trade ),  
+        names = c( "EU (mean)", "Russia", "Ukraine"), 
         main = "Compare the value of US trade relationships",
-        ylim = c( 0, 100 ), xlab="", ylab="", 
+        ylim = c( 0, 50 ), xlab="", ylab="", 
         col = c( "blue", "red", "yellow" ) 
-) 
+)  
+
+trade.volume <- c( eu.mean.trade, russo.trade, eco.trade )
+trade.volume.deco <- paste( "$", trade.volume, "B" )
+y.loc <- trade.volume + 2
+#
+# The `text()` . . . procedure(?) . . . wants vectors for its first
+# three parameters.
+#
+text( x, y.loc, trade.volume.deco )
 
 title( xlab="Trade Relationship", cex.lab = 1.5, line = 2 )
 title( ylab="Value in billions", cex.lab = 1.5, line = 2 )
